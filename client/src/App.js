@@ -1,6 +1,12 @@
-import React from 'react';
+import React from "react";
 
-function App() {
-  return(
-  <h1>hello world</h1>);
+import Login from "./pages/Login";
+import "./global.css";
+
+export default function App() {
+  //Array [value, changeValueFnction]
+  return (
+    //JSX javascript xml
+    <Login />
+  );
 }
