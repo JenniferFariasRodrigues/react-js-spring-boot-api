@@ -51,4 +51,6 @@ Link:
 <p align="center">
  <img src="img/output.jpeg" height="250" width="550"> 
 </p>
-
+<p align="center">
+ <img src="img/cadastro.jpeg" height="250" width="550"> 
+</p>
