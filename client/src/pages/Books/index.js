@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiPower, FiEdit, FiTrash2 } from "react-icons/fi";
 
 import api from "../../services/api";
@@ -15,7 +15,7 @@ export default function Books() {
   const username = localStorage.getItem("username");
   const accessToken = localStorage.getItem("accessToken");
 
-  const history = useHistory();
+  const history = useNavigate();
 
   async function logout() {
     localStorage.clear();
