@@ -20,8 +20,9 @@ export default function NewBook() {
   const username = localStorage.getItem("username");
   const accessToken = localStorage.getItem("accessToken");
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   async function loadBook() {
     try {
       const response = await api.get(`api/book/v1/${bookId}`, {
@@ -38,14 +39,14 @@ export default function NewBook() {
       setLaunchDate(adjustedDate);
     } catch (error) {
       alert("Error recovering Book! Try again!");
-      history.push("/books");
+      navigate("/books");
     }
   }
 
   useEffect(() => {
     if (bookId === "0") return;
     else loadBook();
-  }, [bookId]);
+  }, [bookId, loadBook]);
 
   async function saveOrUpdate(e) {
     e.preventDefault();
@@ -73,7 +74,7 @@ export default function NewBook() {
         });
       }
 
-      history.push("/books");
+      navigate("/books");
     } catch (err) {
       alert("Error while recording Book! Try again!");
     }
@@ -83,7 +84,7 @@ export default function NewBook() {
     <div className="new-book-container">
       <div className="content">
         <section className="form">
-          <img src={logoImage} alt="Erudio" />
+          <img src={logoImage} alt="Jennifer" />
           <h1>{bookId === "0" ? "Add New" : "Update"} Book</h1>
           <p>
             Enter the book information and click on{" "}
