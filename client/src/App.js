@@ -1,12 +1,9 @@
 import React from "react";
 
-import Login from "./pages/Login";
 import "./global.css";
 
+import Routes from "./routes";
+
 export default function App() {
-  //Array [value, changeValueFnction]
-  return (
-    //JSX javascript xml
-    <Login />
-  );
+  return <Routes />;
 }
