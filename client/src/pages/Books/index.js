@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiPower, FiEdit, FiTrash2 } from "react-icons/fi";
 
 import api from "../../services/api";
@@ -15,16 +15,16 @@ export default function Books() {
   const username = localStorage.getItem("username");
   const accessToken = localStorage.getItem("accessToken");
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   async function logout() {
     localStorage.clear();
-    history.push("/");
+    navigate("/");
   }
 
   async function editBook(id) {
     try {
-      history.push(`book/new/${id}`);
+      navigate(`/book/new/${id}`);
     } catch (error) {
       alert("Edit failed! Try again.");
     }
@@ -43,6 +43,7 @@ export default function Books() {
     }
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   async function fetchMoreBooks() {
     const response = await api.get("api/book/v1", {
       headers: {
@@ -67,11 +68,11 @@ export default function Books() {
   return (
     <div className="book-container">
       <header>
-        <img src={logoImage} alt="Erudio" />
+        <img src={logoImage} alt="Jennifer" />
         <span>
           Welcome, <strong>{username.toUpperCase()}</strong>!
         </span>
-        <Link className="button" to="book/new/0">
+        <Link className="button" to="/book/new/0">
           Add New Book
         </Link>
         <button onClick={logout} type="button">

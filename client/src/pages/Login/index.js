@@ -11,7 +11,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   async function login(e) {
     e.preventDefault();
@@ -27,7 +27,7 @@ export default function Login() {
       localStorage.setItem("username", username);
       localStorage.setItem("accessToken", response.data.token);
 
-      history.push("/books");
+      navigate("/books");
     } catch (err) {
       alert("Login failed! Try again!");
     }
