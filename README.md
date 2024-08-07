@@ -49,8 +49,8 @@ Link:
 
  The expected project frontend output is:
 <p align="center">
- <img src="img/output.jpeg" height="250" width="550"> 
+ <img src="img/output.jpeg" height="250" width="450"> 
 </p>
 <p align="center">
- <img src="img/cadastro.jpeg" height="250" width="550"> 
+ <img src="img/cadastro.jpeg" height="250" width="450"> 
 </p>
